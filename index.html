@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio NFC</title>
+</head>
+<body onclick="reproducir()" style="background:black; color:white; text-align:center;">
+
+<h1 id="texto">...</h1>
+
+<audio id="audio">
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("audio");
+
+  function reproducir() {
+    audio.play().then(() => {
+      document.getElementById("texto").innerText = "";
+    }).catch(() => {
+      document.getElementById("texto").innerText = "Toca la pantalla";
+    });
+  }
+
+  window.onload = reproducir;
+</script>
+
+</body>
+</html>
